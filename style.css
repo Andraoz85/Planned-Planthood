@@ -78,7 +78,7 @@ main {
   --clr-green-100: hsl(169, 11%, 93%);
   --clr-green-200: hsl(169, 51%, 58%);
   --clr-green-400: hsl(169, 86%, 28%);
-  --clr-green-800: hsl(169, 86%, 12%);
+  --clr-green-800: hsl(170, 87%, 12%);
   --clr-green-900: hsl(169, 80%, 12%);
 
   --clr-robust: hsl(221, 63%, 32%);
@@ -190,7 +190,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   max-width: 900px;
-  padding: 0.5rem;
+  padding: 0.2rem;
   margin-inline: auto;
   justify-content: space-between;
 }
@@ -199,17 +199,13 @@ body {
   display: flex;
   align-items: center;
 }
-.logo-img {
-  width: 2rem;
-  height: 2rem;
-  margin-right: 1rem;
-}
-.logo-text {
-  font-size: var(--fs-200);
+
+.logo-text p {
+  font-size: var(--fs-500);
   font-weight: var(--fw-600);
-  color: var(--clr-accent);
+  color: var(--clr-green-400);
   text-transform: uppercase;
-  line-height: 1;
+  margin-left: 1rem;
 }
 
 .main-nav {
@@ -228,7 +224,9 @@ body {
   text-transform: uppercase;
   color: var(--clr-accent);
   font-weight: var(--fw-600);
+  font-size: var(--fs-500);
   text-decoration: none;
+  padding: 1rem;
 }
 
 .nav-menu li a:hover {
@@ -244,8 +242,11 @@ body {
   cursor: pointer;
 }
 .hamburger-icon {
-  width: 24px;
-  height: 24px;
+  width: 48px;
+  height: 48px;
+}
+.nav-toggle:hover {
+  border: 4px solid var(--clr-accent);
 }
 
 /* Dölj menyn för mobiler och tablets*/
@@ -274,7 +275,6 @@ body {
 
 .hero-section p {
   margin-inline: auto;
-  max-width: 60ch;
   margin-bottom: 2rem;
 }
 
@@ -420,6 +420,11 @@ body {
   max-width: 900px;
   margin: 0 auto;
   list-style: none;
+}
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 .cards-grid li {
   display: flex;  /* flex-container så att .card kan fylla hela rutan */
