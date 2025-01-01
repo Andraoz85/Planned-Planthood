@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planned Planthood</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <!-- ===== HEADER ==== -->
+    <header class="site-header">
+      <div class="header-wrapper">
+        <!-- Logotyp -->
+        <div class="branding">
+          <img class="logo-img" src="Assets/images/logo.svg" alt="Planned Planthood logotyp" />
+          <p class="logo-text">PLANNED<br>PLANTHOOD</p>
+        </div>
+
+        <!-- Navigering -->
+        <nav class="main-nav" aria-label="Huvudmeny">
+          <button class="nav-toggle" aria-expanded="false" aria-label="Toggle menu">
+            <img class="hamburger-icon" src="Assets/images/icon-hamburger.svg" alt="">
+          </button>
+          <ul id="menu" class="nav-menu">
+            <li><a href="#">Hem</a></li>
+            <li><a href="#">Historik</a></li>
+            <li><a href="#">Tips</a></li>
+            <li><a href="#">Kontakt</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+
+    <!-- ==== MAIN ==== -->
+    <main class="container">
+      <!-- Hero-sektion med galleri -->
+      <section class="hero-section">
+        <h1>Uppskattade växter</h1>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+          Similique, corporis ipsum.
+        </p>
+        <figure class="plant-gallery">
+          <img class="grid-col-span-2 grid-row-span-2"  src="https://picsum.photos/300/300?random=1" alt="Exempelbild 1" />
+          <img src="https://picsum.photos/300/300?random=2" alt="Exempelbild 2" />
+          <img src="https://picsum.photos/300/300?random=3" alt="Exempelbild 3" />
+          <img class="grid-col-span-2" src="https://picsum.photos/300/300?random=4" alt="Exempelbild 4" />
+          <img class="grid-col-span-2" src="https://picsum.photos/300/300?random=5" alt="Exempelbild 5" />
+          <img class="grid-col-span-2" src="https://picsum.photos/300/300?random=6" alt="Exempelbild 6" />
+        </figure>
+      </section>
+
+      <!-- Nyhetsbrev -->
+      <section class="newsletter-signup">
+        <div class="newsletter-content">
+          <h2>Anmäl dig till vårt nyhetsbrev så du inte missar en utsådd!</h2>
+          <form action="#" method="post" class="newsletter-form">
+            <label for="email" class="visually-hidden">E-post</label>
+            <div class="submit-container">
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                placeholder="email@domain.com" 
+                required 
+              />
+              <button type="submit" class="btn-submit">SKICKA</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="newsletter-icon">
+          <img src="Assets/images/icon-planting.svg" alt="" class="icon-seedling">
+        </div>
+      </section>
+
+      <!-- Kort med växter -->
+      <section class="plant-cards">
+        <ul class="cards-grid">
+          <!-- kort 1 -->
+          <li>
+            <article class="card">
+              <img 
+                src="https://picsum.photos/350/250?random=145" 
+                alt="En bild på gurka"
+                class="card-image"
+              />
+              <div class="card-content">
+                <ul class="tags">
+                  <li class="tag">Blommor</li>
+                  <li class="tag">Ätbart</li>
+                  <li class="tag">Grönska</li>
+                </ul>
+                <h3>Gurka</h3>
+                <p>
+                  Gurka växer snabbt, är enkel att odla och ger mängder 
+                  med gurkor, bara man är noga med vattning, 
+                  omplantering, duschning och gödsling.
+                </p>
+              </div>
+              <footer class="card-footer">
+                <div class="avatar-meta">
+                  <img
+                    src="https://avatar.iran.liara.run/public/40"
+                    alt="avatar"
+                    class="avatar"
+                  />
+                  <p class="meta-info">
+                    Coolio<br />
+                    <time datetime="2024-04-01">2024-04-01</time>
+                  </p>
+                </div>
+              </footer>
+            </article>
+          </li>
+          <!-- Kort 2 -->
+          <li>
+            <article class="card">
+              <img 
+                src="https://picsum.photos/350/250?random=146" 
+                alt="En bild på tomat"
+                class="card-image"
+              />
+              <div class="card-content">
+                <ul class="tags">
+                  <li class="tag">Solälskande</li>
+                  <li class="tag">Lättodlat</li>
+                  <li class="tag">Ätbart</li>
+                </ul>
+                <h3>Tomat</h3>
+                <p>
+                  En perfekt grönsak att odla på balkongen eller i trädgården.
+                  Ger riklig skörd under sommaren.
+                </p>
+              </div>
+              <footer class="card-footer">
+                <div class="avatar-meta">
+                  <img
+                    src="https://avatar.iran.liara.run/public/41"
+                    alt="avatar"
+                    class="avatar"
+                  />
+                  <p class="meta-info">
+                    Anna Odlare<br />
+                    <time datetime="2024-12-05">2024-12-05</time>
+                  </p>
+                </div>
+              </footer>
+            </article>
+          </li> 
+          <!-- Kort 3 -->
+          <li>
+            <article class="card">
+              <img 
+                src="https://picsum.photos/350/250?random=147" 
+                alt="En bild på pelargon"
+                class="card-image"
+              />
+              <div class="card-content">
+                <ul class="tags">
+                  <li class="tag">Dekorativ</li>
+                  <li class="tag">Färgstark</li>
+                  <li class="tag">Tålig</li>
+                  <li class="tag">Blommor</li>
+                </ul>
+                <h3>Pelargon</h3>
+                <p>
+                  En vacker och lättskött blomma som trivs både inne och ute under sommaren.
+                </p>
+              </div>
+              <footer class="card-footer">
+                <div class="avatar-meta">
+                  <img
+                    src="https://avatar.iran.liara.run/public/42"
+                    alt="avatar"
+                    class="avatar"
+                  />
+                  <p class="meta-info">
+                    Blomsterkalle<br />
+                    <time datetime="2024-12-03">2024-12-03</time>
+                  </p>
+                </div>
+              </footer>
+            </article>
+          </li>
+          <!-- Kort 4 -->
+          <li>
+            <article class="card">
+              <img 
+                src="https://picsum.photos/350/250?random=148" 
+                alt="En bild på Basilika"
+                class="card-image"
+              />
+              <div class="card-content">
+                <ul class="tags">
+                  <li class="tag">Kryddor</li>
+                  <li class="tag">Doftande</li>
+                  <li class="tag">Solälskande</li>
+                </ul>
+                <h3>Basilika</h3>
+                <p>
+                  En fantastik krydda för pastarätter och sallader. Trivs bäst i ett soligt fönster.
+                </p>
+              </div>
+              <footer class="card-footer">
+                <div class="avatar-meta">
+                  <img
+                    src="https://avatar.iran.liara.run/public/43"
+                    alt="avatar"
+                    class="avatar"
+                  />
+                  <p class="meta-info">
+                    Krydd-Malin<br />
+                    <time datetime="2024-12-07">2024-12-07</time>
+                  </p>
+                </div>
+              </footer>
+            </article>
+          </li>
+          <!-- Kort 5 -->
+          <li>
+            <article class="card">
+              <img 
+                src="https://picsum.photos/350/250?random=149" 
+                alt="En bild på sallad"
+                class="card-image"
+              />
+              <div class="card-content">
+                <ul class="tags">
+                  <li class="tag">Snabbväxande</li>
+                  <li class="tag">Ätbart</li>
+                  <li class="tag">Grönska</li>
+                </ul>
+                <h3>Sallad</h3>
+                <p>
+                  Sallad är en av de enklaste grönsakerna att odla och ger snabba resultat för färska måltider.
+                </p>
+              </div>
+              <footer class="card-footer">
+                <div class="avatar-meta">
+                  <img
+                    src="https://avatar.iran.liara.run/public/44"
+                    alt="avatar"
+                    class="avatar"
+                  />
+                  <p class="meta-info">
+                    Grönis<br />
+                    <time datetime="2024-12-06">2024-12-06</time>
+                  </p>
+                </div>
+              </footer>
+            </article>
+          </li>
+          <!-- Kort 6 -->
+          <li>
+            <article class="card">
+              <img 
+                src="https://picsum.photos/350/250?random=150" 
+                alt="En bild på ormbunke"
+                class="card-image"
+              />
+              <div class="card-content">
+                <ul class="tags">
+                  <li class="tag">Luftfuktande</li>
+                  <li class="tag">Grönska</li>
+                  <li class="tag">Dekorativ</li>
+                </ul>
+                <h3>Ormbunke</h3>
+                <p>
+                  En klassisk växt som passar perfekt i badrummet eller på skuggiga platser.
+                </p>
+              </div>
+              <footer class="card-footer">
+                <div class="avatar-meta">
+                  <img
+                    src="https://avatar.iran.liara.run/public/45"
+                    alt="avatar"
+                    class="avatar"
+                  />
+                  <p class="meta-info">
+                    Naturvännen<br />
+                    <time datetime="2024-12-08">2024-12-08</time>
+                  </p>
+                </div>
+              </footer>
+            </article>
+          </li>
+          <!-- repeat cards -->
+          <!-- Kort 7 -->
+            <li>
+            <article class="card">
+              <img 
+                src="https://picsum.photos/350/250?random=145" 
+                alt="En bild på gurka"
+                class="card-image"
+              />
+              <div class="card-content">
+                <ul class="tags">
+                  <li class="tag">Blommor</li>
+                  <li class="tag">Ätbart</li>
+                  <li class="tag">Grönska</li>
+                </ul>
+                <h3>Gurka</h3>
+                <p>
+                  Gurka växer snabbt, är enkel att odla och ger mängder 
+                  med gurkor, bara man är noga med vattning, 
+                  omplantering, duschning och gödsling.
+                </p>
+              </div>
+              <footer class="card-footer">
+                <div class="avatar-meta">
+                  <img
+                    src="https://avatar.iran.liara.run/public/40"
+                    alt="avatar"
+                    class="avatar"
+                  />
+                  <p class="meta-info">
+                    Coolio<br />
+                    <time datetime="2024-04-01">2024-04-01</time>
+                  </p>
+                </div>
+              </footer>
+            </article>
+          </li>
+          <!-- Kort 8 -->
+          <li>
+            <article class="card">
+              <img 
+                src="https://picsum.photos/350/250?random=146" 
+                alt="En bild på tomat"
+                class="card-image"
+              />
+              <div class="card-content">
+                <ul class="tags">
+                  <li class="tag">Solälskande</li>
+                  <li class="tag">Lättodlat</li>
+                  <li class="tag">Ätbart</li>
+                </ul>
+                <h3>Tomat</h3>
+                <p>
+                  En perfekt grönsak att odla på balkongen eller i trädgården.
+                  Ger riklig skörd under sommaren.
+                </p>
+              </div>
+              <footer class="card-footer">
+                <div class="avatar-meta">
+                  <img
+                    src="https://avatar.iran.liara.run/public/41"
+                    alt="avatar"
+                    class="avatar"
+                  />
+                  <p class="meta-info">
+                    Anna Odlare<br />
+                    <time datetime="2024-12-05">2024-12-05</time>
+                  </p>
+                </div>
+              </footer>
+            </article>
+          </li> 
+          <!-- Kort 9 -->
+          <li>
+            <article class="card">
+              <img 
+                src="https://picsum.photos/350/250?random=147" 
+                alt="En bild på pelargon"
+                class="card-image"
+              />
+              <div class="card-content">
+                <ul class="tags">
+                  <li class="tag">Dekorativ</li>
+                  <li class="tag">Färgstark</li>
+                  <li class="tag">Tålig</li>
+                  <li class="tag">Blommor</li>
+                </ul>
+                <h3>Pelargon</h3>
+                <p>
+                  En vacker och lättskött blomma som trivs både inne och ute under sommaren.
+                </p>
+              </div>
+              <footer class="card-footer">
+                <div class="avatar-meta">
+                  <img
+                    src="https://avatar.iran.liara.run/public/42"
+                    alt="avatar"
+                    class="avatar"
+                  />
+                  <p class="meta-info">
+                    Blomsterkalle<br />
+                    <time datetime="2024-12-03">2024-12-03</time>
+                  </p>
+                </div>
+              </footer>
+            </article>
+          </li>
+          <!-- Kort 10 -->
+          <li>
+            <article class="card">
+              <img 
+                src="https://picsum.photos/350/250?random=148" 
+                alt="En bild på Basilika"
+                class="card-image"
+              />
+              <div class="card-content">
+                <ul class="tags">
+                  <li class="tag">Kryddor</li>
+                  <li class="tag">Doftande</li>
+                  <li class="tag">Solälskande</li>
+                </ul>
+                <h3>Basilika</h3>
+                <p>
+                  En fantastik krydda för pastarätter och sallader. Trivs bäst i ett soligt fönster.
+                </p>
+              </div>
+              <footer class="card-footer">
+                <div class="avatar-meta">
+                  <img
+                    src="https://avatar.iran.liara.run/public/43"
+                    alt="avatar"
+                    class="avatar"
+                  />
+                  <p class="meta-info">
+                    Krydd-Malin<br />
+                    <time datetime="2024-12-07">2024-12-07</time>
+                  </p>
+                </div>
+              </footer>
+            </article>
+          </li>
+          <!-- Kort 11 -->
+          <li>
+            <article class="card">
+              <img 
+                src="https://picsum.photos/350/250?random=149" 
+                alt="En bild på sallad"
+                class="card-image"
+              />
+              <div class="card-content">
+                <ul class="tags">
+                  <li class="tag">Snabbväxande</li>
+                  <li class="tag">Ätbart</li>
+                  <li class="tag">Grönska</li>
+                </ul>
+                <h3>Sallad</h3>
+                <p>
+                  Sallad är en av de enklaste grönsakerna att odla och ger snabba resultat för färska måltider.
+                </p>
+              </div>
+              <footer class="card-footer">
+                <div class="avatar-meta">
+                  <img
+                    src="https://avatar.iran.liara.run/public/44"
+                    alt="avatar"
+                    class="avatar"
+                  />
+                  <p class="meta-info">
+                    Grönis<br />
+                    <time datetime="2024-12-06">2024-12-06</time>
+                  </p>
+                </div>
+              </footer>
+            </article>
+          </li>
+          <!-- Kort 12 -->
+          <li>
+            <article class="card">
+              <img 
+                src="https://picsum.photos/350/250?random=150" 
+                alt="En bild på ormbunke"
+                class="card-image"
+              />
+              <div class="card-content">
+                <ul class="tags">
+                  <li class="tag">Luftfuktande</li>
+                  <li class="tag">Grönska</li>
+                  <li class="tag">Dekorativ</li>
+                </ul>
+                <h3>Ormbunke</h3>
+                <p>
+                  En klassisk växt som passar perfekt i badrummet eller på skuggiga platser.
+                </p>
+              </div>
+              <footer class="card-footer">
+                <div class="avatar-meta">
+                  <img
+                    src="https://avatar.iran.liara.run/public/45"
+                    alt="avatar"
+                    class="avatar"
+                  />
+                  <p class="meta-info">
+                    Naturvännen<br />
+                    <time datetime="2024-12-08">2024-12-08</time>
+                  </p>
+                </div>
+              </footer>
+            </article>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Sektion 4: Tidigare odlingar -->
+      <section class="previous-crops">
+        <div class="previous-crops-icon">
+          <img src="Assets/images/icon-seedling-2.svg" alt="" class="icon-seedling">
+        </div>
+        <div class="previous-crops-content">
+          <h2>Våra tidigare odlingar</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Aspernatur ratione quia eos pariatur deserunt veritatis.
+            Tenetur, ipsum! Iusto delectus ipsam esse pariatur rerum
+            eveniet nostrum, dolor distinctio nam quaerat doloribus?
+          </p>
+          <a href="#" class="btn-planted">Planterade plantor</a>
+        </div>
+      </section>
+    </main>
+
+
+    <!-- ==== FOOTER ==== -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <!-- logo, text & kontaktinfo -->
+        <div class="footer-branding">
+          <div class="logo-div">
+            <img src="Assets/images/logo.svg" alt="Planned Planthood logotyp" />
+            <p>Planned<br>Planthood</p>
+          </div>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Neque, veniam ducimus aut sint atque ullam alias perspiciatis fuga.
+            Consequuntur nesciunt ea corrupti aperiam fugit inventore ratione earum.
+            Iure, eius molestias?
+          </p>
+          <p class="footer-contact">
+            <strong>Telefon: 020-1234567</strong><br>
+            <a href="mailto:info@plannedplant.com">info@plannedplant.com</a>
+          </p>
+        </div>
+        <!-- navlänkar -->
+        <nav class="footer-nav" aria-label="Sidfotsmeny">
+          <ul class="footer-menu" role="list">
+            <li><a href="#">Hem</a></li>
+            <li><a href="#">Historik</a></li>
+            <li><a href="#">Tips</a></li>
+            <li><a href="#">Kontakt</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

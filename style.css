@@ -1,0 +1,636 @@
+/* reset from Kevin Powell edit if you like */
+
+/* makes sizing simpler */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* remove default spacing */
+/* force styling of type through styling, rather than elements */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* dark mode user-agent-styles */
+html {
+  color-scheme: dark light;
+}
+
+/* min body height */
+body {
+  min-height: 100vh;
+}
+
+/* responsive images/videos */
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+/* make headings wrap better */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p,
+li,
+figcaption {
+  text-wrap: pretty;
+  max-width: 55ch;
+}
+
+/* for container queries, landmarks as containers */
+body > :is(header, footer),
+main {
+  container-type: inline-size;
+}
+
+/* remove list style but keep it as list for Safari browser - use with <ul role="list"> */
+[role="list"] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Theme */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+:root {
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: hsl(0, 0%, 87%);
+  --clr-neutral-300: hsl(0, 0%, 57%);
+  --clr-neutral-400: hsl(0, 0%, 27%);
+  --clr-neutral-800: hsl(0, 0%, 17%);
+  --clr-neutral-900: hsl(0, 0%, 12%);
+
+  --clr-green-100: hsl(169, 11%, 93%);
+  --clr-green-200: hsl(169, 51%, 58%);
+  --clr-green-400: hsl(169, 86%, 28%);
+  --clr-green-800: hsl(169, 86%, 12%);
+  --clr-green-900: hsl(169, 80%, 12%);
+
+  --clr-robust: hsl(221, 63%, 32%);
+  --clr-green: hsl(110, 63%, 32%);
+  --clr-flower: hsl(2, 92%, 33%);
+  --clr-colorful: hsl(303, 55%, 47%);
+  --clr-sunloving: hsl(27, 88%, 33%);
+  --clr-air: hsl(180, 84%, 27%);
+  --clr-decorative: hsl(278, 79%, 40%);
+  --clr-edible: hsl(68, 61%, 30%);
+  --clr-easy: hsl(224, 86%, 58%);
+  --clr-fragrant: hsl(327, 51%, 47%);
+  --clr-fast: hsl(218, 11%, 34%);
+
+  --border-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+  --font-base: "Open Sans", "Segoe UI", Tahoma, sans-serif;
+
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+  --fw-800: 800;
+  --fw-900: 900;
+
+  --fs-100: 0.625rem;
+  --fs-200: 0.75rem;
+  --fs-400: 1rem;
+  --fs-500: 1.25rem;
+  --fs-600: 1.5rem;
+  --fs-700: 2rem;
+  --fs-800: 2.5rem;
+  --fs-900: 3rem;
+
+  --clr-accent: var(--clr-green-400);
+  --clr-accent-light-1: var(--clr-green-100);
+
+  --clr-primary-light-1: var(--clr-neutral-100);
+  --clr-primary-light-2: var(--clr-neutral-200);
+  --clr-primary-light-3: var(--clr-neutral-300);
+  --clr-primary: var(--clr-neutral-400);
+  --clr-primary-dark: var(--clr-neutral-800);
+
+  --fw-regular: var(--fw-400);
+  --fw-medium: var(--fw-500);
+  --fw-semi-bold: var(--fw-600);
+  --fw-bold: var(--fw-700);
+  --fw-x-bold: var(--fw-900);
+}
+
+/* Utilities */
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+
+/* Composition */
+.flow > * + * {
+  margin-block-start: var(--flow-space, 1em);
+}
+
+/* Global/base */
+h2,
+h3 {
+  font-weight: var(--fw-bold);
+  line-height: 1;
+}
+
+h2 {
+  font-size: var(--fs-700);
+}
+
+h3 {
+  font-size: var(--fs-600);
+  font-weight: var(--fw-semi-bold);
+}
+
+a {
+  text-decoration: none;
+  color: var(--clr-accent);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--clr-primary-light-1);
+    text-decoration: underline;
+  }
+}
+
+body {
+  font-family: var(--font-base);
+  background-color: var(--clr-accent-light-1);
+  color: var(--clr-primary-dark);
+}
+
+/***********************************************
+  4) HEADER
+ ***********************************************/
+.site-header {
+  background-color: var(--clr-primary-light-1);
+
+}
+.header-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 900px;
+  padding: 0.5rem;
+  margin-inline: auto;
+  justify-content: space-between;
+}
+
+.branding {
+  display: flex;
+  align-items: center;
+}
+.logo-img {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+}
+.logo-text {
+  font-size: var(--fs-200);
+  font-weight: var(--fw-600);
+  color: var(--clr-accent);
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-menu{
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-menu li a {
+  text-transform: uppercase;
+  color: var(--clr-accent);
+  font-weight: var(--fw-600);
+  text-decoration: none;
+}
+
+.nav-menu li a:hover {
+  background-color: var(--clr-accent);
+  color: var(--clr-primary-light-1);
+}
+
+/* Hamburgarknapp (dolt i desktop) */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.hamburger-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Dölj menyn för mobiler och tablets*/
+@media (max-width: 1024px) {
+  .nav-menu {
+    display: none;
+  }
+  .nav-toggle {
+    display: flex;
+  }
+}
+
+/***********************************************
+  HERO SECTION
+ ***********************************************/
+
+.hero-section {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.hero-section h1 {
+  font-size: var(--fs-700);
+  margin-bottom: 1rem;
+}
+
+.hero-section p {
+  margin-inline: auto;
+  max-width: 60ch;
+  margin-bottom: 2rem;
+}
+
+.plant-gallery {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* default desktop */
+  max-width: 900px;
+  margin-inline: auto;
+  border: 10px solid var(--clr-neutral-100);
+  box-shadow: var(--border-shadow);
+}
+.plant-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Desktop-kläge */
+@media (min-width: 1025px) {
+  .grid-col-span-2 {
+      grid-column: span 2;
+    }
+  .grid-row-span-2 {
+    grid-row: span 2;
+  }
+}
+
+/* Större tablets: 3 kolumner, 2 rader (alla bilder lika stora) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .plant-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mindre tablets */
+@media (min-width: 481px) and (max-width: 767px) {
+  .plant-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Mobiler */
+@media (max-width: 480px) {
+  .plant-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+/***********************************************
+  NYHETSBREV
+ ***********************************************/
+.newsletter-signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  background-color: var(--clr-primary-light-1);
+  box-shadow: var(--border-shadow);
+}
+
+.newsletter-content {
+  max-width: 20rem;
+  margin-right: 2rem;
+}
+.newsletter-content h2 {
+  font-size: var(--fs-600);
+  margin-bottom: 1rem;
+}
+
+/* input + knapp */
+.submit-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--clr-primary-dark);
+  border-radius: 2rem;
+  overflow: hidden;
+}
+.submit-container input[type="email"] {
+  flex: 1;  /* Fyller ut radens utrymme */
+  border: none;
+  text-align: center;
+}
+.btn-submit {
+  border: none;
+  background-color: var(--clr-accent);
+  color: var(--clr-neutral-100);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: var(--fw-600);
+  transition: background-color 0.2s;
+  border-radius: 2rem;
+}
+
+.btn-submit:hover {
+  background-color: var(--clr-primary-light-1);
+  color: var(--clr-accent);
+  border: 0.1px solid var(--clr-accent);
+}
+
+.newsletter-icon {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: var(--clr-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.icon-seedling {
+  width: 60px;
+  height: auto;
+}
+
+/* === Media queries för nyhetsbrev === */
+
+/* Tablet och mindre */
+@media (max-width: 768px) {
+  .newsletter-signup {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .newsletter-icon {
+    margin-bottom: 1rem;
+  }
+}
+
+/***********************************************
+  KORT
+ ***********************************************/
+
+.plant-cards {
+  width: 100%;
+  padding: 2rem 1rem;
+  background-color: var(--clr-accent-light-1);
+}
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  align-items: stretch;
+  max-width: 900px;
+  margin: 0 auto;
+  list-style: none;
+}
+.cards-grid li {
+  display: flex;  /* flex-container så att .card kan fylla hela rutan */
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;  /* fyller hela <li> */
+  background-color: var(--clr-primary-light-1);
+  border-radius: 0.3rem;
+  box-shadow: var(--border-shadow);
+}
+.card-image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  padding: 1rem;
+}
+.card-content {
+  padding: 1rem;
+  flex: 1;  /* gör att footern hamnar längst ned */
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.tag {
+  font-size: var(--fs-100);
+  background-color: var(--clr-accent);
+  color: var(--clr-neutral-100);
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+}
+.card-footer {
+  padding: 0.75rem 1rem;
+}
+.avatar-meta {
+  display: flex;
+  gap: 1rem;
+}
+.avatar {
+  width: 40px;
+  height: 40px;
+  border: 0.5px solid var(--clr-primary-dark);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* === Media queries för kroten === */
+@media (max-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .cards-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/***********************************************
+  TIDIGARE ODLINGAR
+ ***********************************************/
+.previous-crops {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 1rem;
+  background-color: var(--clr-primary-light-1);
+  box-shadow: var(--border-shadow);
+  text-align: left;
+}
+
+.previous-crops-icon {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: var(--clr-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 3rem;
+  flex-shrink: 0;
+}
+.previous-crops-icon .icon-seedling {
+  width: 60px;
+  height: auto;
+}
+
+.previous-crops-content {
+  display: flex;
+  flex-direction: column;
+}
+.previous-crops h2 {
+  font-size: var(--fs-600);
+  margin-bottom: 1rem;
+}
+
+.previous-crops p {
+  max-width: 60ch;
+  margin-bottom: 1.5rem;
+}
+
+.btn-planted {
+  width: fit-content;
+  align-self: flex-end;
+  background-color: var(--clr-accent);
+  color: var(--clr-neutral-100);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.btn-planted:hover {
+  background-color: var(--clr-primary-light-1);
+  color: var(--clr-accent);
+  border: 0.1px solid var(--clr-accent);
+  text-decoration: none;
+}
+
+/* Tablets och mindre */
+@media (max-width: 768px) {
+  .previous-crops {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .previous-crops-icon {
+    margin-inline: auto;
+    margin-bottom: 1rem;
+  }
+}
+
+
+/***********************************************
+  12) FOOTER
+ ***********************************************/
+
+.site-footer {
+  background-color: var(--clr-accent);
+  color: var(--clr-neutral-100);
+  padding: 2rem 1rem;
+}
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 900px;
+  margin-inline: auto;
+}
+.footer-branding {
+  flex: 1;  /* tar upp all utrymme */
+}
+
+.footer-branding p {
+  margin-block-end: 1rem;
+}
+.logo-div{
+  display: flex;
+  img {
+      width: 2rem;
+      height: 3rem;
+      margin-right: 1rem;
+    }
+  p {
+    text-transform: uppercase;
+    font-size: var(--fs-400);
+  }
+}
+.footer-contact {
+  margin-top: 1rem;
+  strong:hover {
+    text-decoration: underline;
+  }
+  a {
+    color: var(--clr-neutral-100);
+    text-decoration: none;
+  }
+}
+
+.footer-menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-menu li a {
+  color: var(--clr-neutral-100);
+  font-weight: var(--fw-600);
+}
+
+.footer-menu li a:hover {
+  text-decoration: underline;
+}
+
+/* Dölj nav-länker för tablets och mobiler */
+@media (max-width: 1024px) {
+  .footer-nav {
+    display: none;
+  }
+}
